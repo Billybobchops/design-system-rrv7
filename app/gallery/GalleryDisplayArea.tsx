@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./galleryDisplayArea.module.scss";
+import classes from "./GalleryDisplayArea.module.scss";
 import Heading from "@components/typography/Heading";
 
 interface GalleryDisplayAreaProps {
