@@ -1,14 +1,61 @@
-import { reactRouter } from "@react-router/dev/vite";
-import autoprefixer from "autoprefixer";
-import tailwindcss from "tailwindcss";
-import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { reactRouter } from '@react-router/dev/vite';
+import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
+import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { federation } from '@module-federation/vite';
 
-export default defineConfig({
-  css: {
-    postcss: {
-      plugins: [tailwindcss, autoprefixer],
-    },
-  },
-  plugins: [reactRouter(), tsconfigPaths()],
+export default defineConfig(({ mode }) => {
+    const isProduction = mode === 'production';
+
+    return {
+        css: {
+            postcss: {
+                plugins: [tailwindcss, autoprefixer],
+            },
+        },
+        resolve: {
+            alias: {
+                '@styles': '/app/styles',
+            },
+        },
+        plugins: [
+            reactRouter(),
+            tsconfigPaths(),
+            // federation({
+            //     name: isProduction
+            //         ? 'remoteDesignSystem'
+            //         : 'remoteDesignSystemDev',
+            //     filename: 'remoteEntry.js',
+            //     exposes: {
+            //         './PrimaryButton': './app/components/button/PrimaryButton.tsx',
+            //     },
+            //     remotes: {
+            //         remote: {
+            //             type: 'module', // Indicate that the remote is an ES module
+            //             name: 'remoteDesignSystem', // Name of the remote exposed module
+            //             entry: `${process.env.VITE_REMOTE_ORIGIN}/remoteEntry.js`, // Dynamic entry URL based on the environment variable
+            //         },
+            //     },
+            //     shared: {
+            //         react: {
+            //             singleton: true, // Ensure only one React instance is used etc.
+            //             requiredVersion: '^19.0.0',
+            //         },
+            //         'react-dom': {
+            //             singleton: true,
+            //             requiredVersion: '^19.0.0',
+            //         },
+            //     },
+            // }),
+        ],
+        // server: {
+        //     origin: isProduction
+        //         ? 'https://your-production-domain.com'
+        //         : 'http://localhost:3000',
+        // },
+        build: {
+            target: 'chrome89', // Maintain compatibility with modern browsers
+        },
+    };
 });

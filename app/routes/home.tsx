@@ -1,13 +1,13 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import type { Route } from './+types/home';
+import { Gallery } from '~/gallery/Gallery';
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+    return [
+        { title: 'Starling UI Design System' },
+        { name: 'description', content: 'Welcome to the Starling UI design system!' },
+    ];
 }
 
 export default function Home() {
-  return <Welcome />;
+    return <Gallery />;
 }
