@@ -1,6 +1,6 @@
 import classes from './Footer.module.scss';
 import { ICFooterLogo } from '@components/Icon';
-import trustwave from '../../public/trustwave.png';
+import trustwave from '~/assets/trustwave.png';
 import InlineLink from '@components/InlineLink';
 
 const Footer = () => {

@@ -3,7 +3,7 @@ import autoprefixer from 'autoprefixer';
 import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { federation } from '@module-federation/vite';
+// import { federation } from '@module-federation/vite';
 
 export default defineConfig(({ mode }) => {
     const isProduction = mode === 'production';
@@ -17,6 +17,10 @@ export default defineConfig(({ mode }) => {
         resolve: {
             alias: {
                 '@styles': '/app/styles',
+                // '@mui/x-date-pickers/AdapterDayjs': path.resolve(
+                //     import.meta.dirname,
+                //     'node_modules/@mui/x-date-pickers/AdapterDayjs/AdapterDayjs.js'
+                // ),
             },
         },
         plugins: [
