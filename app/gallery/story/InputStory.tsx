@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Input from '@components/form/Input';
-import DatePickerInput from '@components/form/DatePicker';
+// import DatePickerInput from '@components/form/DatePicker';
 import Select from '@components/form/Select';
 import InputMonetary from '@components/form/InputMonetary';
 import Textarea from '@components/form/Textarea';
@@ -84,11 +84,11 @@ const InputStory = () => {
                 required={true}
                 type='tel'
             />
-			<DatePickerInput
+			{/* <DatePickerInput
                 label='Start date of first payment'
                 helperText='Please select a date for your first payment.'
                 required={true}
-            />
+            /> */}
             <Select
                 label='Select an account'
                 name='selectAccount'

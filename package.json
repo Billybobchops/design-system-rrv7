@@ -24,7 +24,6 @@
     },
     "devDependencies": {
         "@react-router/dev": "^7.1.2",
-        "@rollup/plugin-commonjs": "^28.0.2",
         "@types/node": "^20",
         "@types/react": "^19.0.1",
         "@types/react-dom": "^19.0.1",
