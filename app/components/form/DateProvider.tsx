@@ -1,5 +1,5 @@
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs/index.js';
 
 interface DateProviderProps {
     children?: React.ReactNode;
