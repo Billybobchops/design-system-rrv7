@@ -3,6 +3,7 @@ import autoprefixer from 'autoprefixer';
 import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import commonjs from '@rollup/plugin-commonjs';
 // import { federation } from '@module-federation/vite';
 
 export default defineConfig(({ mode }) => {
@@ -26,6 +27,7 @@ export default defineConfig(({ mode }) => {
         plugins: [
             reactRouter(),
             tsconfigPaths(),
+			commonjs(),
             // federation({
             //     name: isProduction
             //         ? 'remoteDesignSystem'
