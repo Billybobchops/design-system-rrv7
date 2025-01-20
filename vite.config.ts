@@ -34,6 +34,8 @@ export default defineConfig(({ mode }) => {
             //         : 'remoteDesignSystemDev',
             //     filename: 'remoteEntry.js',
             //     exposes: {
+            //         './VisuallyHidden': './app/components/accessibility/VisuallyHidden.tsx',
+            //         './CTAButton': './app/components/button/CTAButton.tsx',
             //         './PrimaryButton': './app/components/button/PrimaryButton.tsx',
             //     },
             //     remotes: {

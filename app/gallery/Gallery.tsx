@@ -13,7 +13,7 @@ import DialogStory from './story/DialogStory';
 import BadgeStory from './story/BadgeStory';
 import AlertStory from './story/AlertStory';
 import InputStory from './story/InputStory';
-import DateProvider from '~/components/form/DateProvider';
+// import DateProvider from '~/components/form/DateProvider';
 import DividerStory from './story/DividerStory';
 import FeatureStatusStory from './story/FeatureStatusStory';
 import ProgressIndicatorStory from './story/ProgressIndicatorStory';
@@ -24,7 +24,7 @@ import FooterStory from './story/FooterStory';
 export function Gallery() {
     return (
         <main>
-            <DateProvider>
+            {/* <DateProvider> */}
                 <GalleryDisplayArea title='Typography (Fluid)'>
                     <TypographyStory />
                 </GalleryDisplayArea>
@@ -99,7 +99,7 @@ export function Gallery() {
                 <GalleryDisplayArea title='Footer'>
 					<FooterStory />
 				</GalleryDisplayArea>
-            </DateProvider>
+            {/* </DateProvider> */}
         </main>
     );
 }
